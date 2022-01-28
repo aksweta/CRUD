@@ -2,16 +2,14 @@ import React from 'react';
 import Inputfield from './components/Inputfield.js';
 import './App.css';
 import Button from './components/Button.js';
+import Login from './components/Login.js';
 
 
 function App() {
   return (
         <div>
-          <h1>CRUD PRODUCTS</h1>
-        <Inputfield type="number" label=" UserName :" />
-        <Inputfield type="number" label=" PassWord :" />
-        
-        <Button colour="orange" textcolor="white">LOGIN</Button>
+          
+         <Login />
 
         <h1>ADD PRODUCTS</h1>
         <Inputfield type="number" label=" ID :" />
