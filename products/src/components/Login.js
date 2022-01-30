@@ -3,6 +3,7 @@ import Inputfield from "./Inputfield";
 import Button from "./Button";
 import Addproduct from "./Addproduct";
 
+
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -21,13 +22,15 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className="login">
       {isAddProductDisplay ? (
         <Addproduct />
       ) : (
         <>
           <h1>CRUD OPERATION ON PRODUCTS</h1>
+          <br />
           <h3>Sign Up With Your Account</h3>
+          <br />
           <Inputfield
             type="text"
             name="username"
@@ -40,10 +43,11 @@ const Login = () => {
             label=" PassWord :"
             onChange={(e) => setPassword(e.target.value)}
           />
-          <Button colour="orange" textcolor="white" onClick={loginhandle}>
+          <br/>
+          <Button colour="firebrick" textcolor="white" onClick={loginhandle}>
             LOGIN
           </Button>
-
+          <br />
           {message}
         </>
       )}
