@@ -17,11 +17,14 @@ const Addproduct = () => {
         });
 
 
+
+
+
     return(
         <div>
         <h1>ADD PRODUCTS</h1>
         <br />
-        <Inputfield type="number" label=" ID :" name="id" />
+        <Inputfield type="number" label=" ID :" name="id" onChange={handletext} />
         <Inputfield type="number" label=" Category :" />
         <Inputfield type="number" label=" Name :" />
         <Inputfield type="number" label=" Description :" />
