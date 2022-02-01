@@ -27,6 +27,8 @@ const Addproduct = () => {
     console.log("Product:", product);
   };
 
+ 
+
   return (
     <div>
       <h1>ADD PRODUCTS</h1>
@@ -72,9 +74,11 @@ const Addproduct = () => {
         defaultValue={product.ShippingCharge}
         onchange={handletext}
       />
-      <Button colour="orange" textcolor="white" onClick={handlesubmit}>
+      <Button colour="firebrick" textcolor="white" onClick={handlesubmit}>
         Submit On Board
       </Button>
+
+      
     </div>
   );
 };

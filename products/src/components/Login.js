@@ -25,10 +25,18 @@ const Login = () => {
     }
   };
 
+  const handlelogout = () => {
+    setIsAddProductDisplay(localStorage.removeItem("isUserLoggedIn"));
+  }
+
   return (
     <div className="login">
       {isAddProductDisplay ? (
-        <Addproduct />
+          <>
+          <Addproduct />
+          <Button colour="firebrick" textcolor="white" onClick={handlelogout}>Logout</Button>
+          </>
+        
       ) : (
         <>
           <h1>CRUD OPERATION ON PRODUCTS</h1>
