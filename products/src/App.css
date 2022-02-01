@@ -23,7 +23,7 @@ input[type="number"] {
 }
 label{
   width: auto;
-  display: inline;
+  display:inline;
   margin-left: 15%;
   font-size: large;
 }
