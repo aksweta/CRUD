@@ -1,42 +1,82 @@
-import React, { useState }  from "react";
+import React, { useState } from "react";
 import Inputfield from "./Inputfield.js";
 import Button from "./Button";
-import Table from "./Table.js";
+// import Table from "./Table.js";
 
 const Addproduct = () => {
-     
-    // const [isTableDisplay , setIsTableDisplay] = useState(false);
-        
-      const [product, setproduct] = useState({
-          id: "",
-          category: "",
-          name: "",
-          desc: "",
-          price: "",
-          shipping : ""
-        });
+  const [product, setProduct] = useState({
+    ID: "",
+    Category: "",
+    Name: "",
+    Description: "",
+    Price: "",
+    ShippingCharge: "",
+  });
 
+  const handletext = (e) => {
+    console.log(e);
+    const name = e.target.name;
+    const value = e.target.value;
 
+    const newObj = { ...product };
+    newObj[name] = value;
+    setProduct(newObj);
+  };
 
+  const handlesubmit = () => {
+    console.log("Product:", product);
+  };
 
-
-    return(
-        <div>
-        <h1>ADD PRODUCTS</h1>
-        <br />
-        <Inputfield type="number" label=" ID :" name="id" onChange={handletext} />
-        <Inputfield type="number" label=" Category :" />
-        <Inputfield type="number" label=" Name :" />
-        <Inputfield type="number" label=" Description :" />
-        <Inputfield type="number" label=" Price :" />
-        <Inputfield type="number" label=" Shipping Charge :" />
-        <Button colour="firebrick" textcolor="white">Submit On Board</Button>
-
-        <br/>
-         <Table />
-
-        </div>  
-    );
+  return (
+    <div>
+      <h1>ADD PRODUCTS</h1>
+      <Inputfield
+        type="number"
+        label=" ID :"
+        name="ID"
+        defaultValue={product.ID}
+        onchange={handletext}
+      />
+      <Inputfield
+        type="text"
+        label=" Category :"
+        name="Category"
+        defaultValue={product.Category}
+        onchange={handletext}
+      />
+      <Inputfield
+        type="text"
+        label=" Name :"
+        name="Name"
+        defaultValue={product.Name}
+        onchange={handletext}
+      />
+      <Inputfield
+        type="text"
+        label=" Description :"
+        name="Description"
+        defaultValue={product.Description}
+        onchange={handletext}
+      />
+      <Inputfield
+        type="number"
+        label=" Price :"
+        name="Price"
+        defaultValue={product.Price}
+        onchange={handletext}
+      />
+      <Inputfield
+        type="number"
+        label=" Shipping Charge :"
+        name="ShippingCharge"
+        defaultValue={product.ShippingCharge}
+        onchange={handletext}
+      />
+      <Button colour="orange" textcolor="white" onClick={handlesubmit}>
+        Submit On Board
+      </Button>
+    </div>
+  );
 };
 
 export default Addproduct;
