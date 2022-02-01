@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Inputfield from "./Inputfield";
 import Button from "./Button";
 import Addproduct from "./Addproduct";
-
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -10,14 +9,19 @@ const Login = () => {
   const [message, setMessage] = useState("");
   const [isAddProductDisplay, setIsAddProductDisplay] = useState(false);
 
+  useEffect(() => {
+    localStorage.getItem("isUserLoggedIn") &&
+      setIsAddProductDisplay(localStorage.getItem("isUserLoggedIn"));
+  }, []);
+
   const loginhandle = () => {
     if (username === "sweta" && password === "12345") {
       console.log("login done");
       setMessage("login sucessfully");
-      setIsAddProductDisplay(true);
+      localStorage.setItem("isUserLoggedIn", true);
     } else {
       setMessage("login failed");
-      setIsAddProductDisplay(false);
+      //  setIsAddProductDisplay(false);
     }
   };
 
@@ -35,15 +39,15 @@ const Login = () => {
             type="text"
             name="username"
             label=" UserName :"
-            onChange={(e) => setUsername(e.target.value)}
+            onchange={(e) => setUsername(e.target.value)}
           />
           <Inputfield
             type="number"
             name="password"
             label=" PassWord :"
-            onChange={(e) => setPassword(e.target.value)}
+            onchange={(e) => setPassword(e.target.value)}
           />
-          <br/>
+          <br />
           <Button colour="firebrick" textcolor="white" onClick={loginhandle}>
             LOGIN
           </Button>
