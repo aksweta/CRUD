@@ -1,32 +1,38 @@
-.App {
+/* .App {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   
-}
+} */
   
 table {
   border: 2px solid forestgreen;
   width:100%;
   height:auto;
+  margin-top: 50px;
+
 }
   
-th {
+th,tr {
   border: 1px solid black;
+  
 }
 
-input[type="text"],
+/* input[type="text"],
 input[type="number"] {
-  margin-left: 20px;
+  margin-left: 50px;
   margin-bottom: 15px;
+  float: right;
+  display: inline;
 }
 label{
-  width: auto;
+  width:auto;
   display:inline;
-  margin-left: 15%;
+  margin-left: 50px;
   font-size: large;
-}
+  float: left;
+} */
 
 button{
   font-size: large;
@@ -35,7 +41,7 @@ button{
    border-radius: 12px;
    width: 250px;
    height:60px;
-   color: firebrick;
+ 
 }
   
 td {
@@ -49,3 +55,6 @@ td {
 h3{
   margin-left: 80px;
 }
+
+
+

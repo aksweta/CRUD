@@ -32,10 +32,14 @@ const Login = () => {
   return (
     <div className="login">
       {isAddProductDisplay ? (
-          <>
+          <div>
+          <div className="main">
           <Addproduct />
+          </div>
+          <div className="logout"> 
           <Button colour="firebrick" textcolor="white" onClick={handlelogout}>Logout</Button>
-          </>
+          </div>
+          </div>
         
       ) : (
         <>
