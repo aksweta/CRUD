@@ -4,10 +4,8 @@ import Login from "./components/Login.js";
 
 function App() {
   return (
-    <div>
-    <div className="App">
+    <div className="container">
       <Login />
-    </div>
     </div>
   );
 }
